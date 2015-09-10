@@ -20,7 +20,6 @@ class HomeController extends Controller {
 	 */
 	public function __construct()
 	{
-        var_dump('111');die;
 		$this->middleware('auth');
 	}
 

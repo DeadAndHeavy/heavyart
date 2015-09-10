@@ -1,6 +1,10 @@
 <?php namespace App\Http\Controllers\Auth;
 
+use App\GameClass;
+use App\GameFaction;
+use App\GameRace;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -20,6 +24,10 @@ class AuthController extends Controller {
 
 	use AuthenticatesAndRegistersUsers;
 
+    protected $redirectPath = '/';
+
+    protected $loginPath = '/';
+
 	/**
 	 * Create a new authentication controller instance.
 	 *
@@ -34,5 +42,79 @@ class AuthController extends Controller {
 
 		$this->middleware('guest', ['except' => 'getLogout']);
 	}
+
+    /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getRegister()
+    {
+        $gameClasses = GameClass::all();
+        $gameFactions = GameFaction::all();
+        $gameRaces = GameRace::all();
+
+        return view('auth.register',
+            [
+                'game_classes'  => $gameClasses,
+                'game_factions' => $gameFactions,
+                'game_races'    => $gameRaces,
+            ]
+        );
+    }
+
+    /**
+     * Handle a login request to the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function postLogin(Request $request)
+    {
+        $this->validate($request, [
+            'username' => 'required', 'password' => 'required',
+        ]);
+
+        $credentials = $request->only('username', 'password');
+
+        if ($this->auth->attempt($credentials, $request->has('remember')))
+        {
+            return redirect()->intended($this->redirectPath());
+        }
+
+        return redirect($this->loginPath())
+            ->withInput($request->only('username', 'remember'))
+            ->with('form_type', 'auth')
+            ->withErrors([
+                'username' => $this->getFailedLoginMessage(),
+            ]);
+    }
+
+    /**
+     * Handle a registration request for the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function postRegister(Request $request)
+    {
+        $validator = $this->registrar->validator($request->all());
+
+        if ($validator->fails())
+        {
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
+
+        $this->auth->login($this->registrar->create($request->all()));
+
+        return redirect($this->redirectPath());
+    }
+
+    protected function getFailedLoginMessage()
+    {
+        return 'Пользователь не найден.';
+    }
 
 }

@@ -1,5 +1,8 @@
 <?php namespace App\Http\Controllers;
 
+use App\Comics;
+use App\User;
+
 class IndexController extends Controller {
 
     /**
@@ -9,7 +12,7 @@ class IndexController extends Controller {
      */
     public function __construct()
     {
-        var_dump('111');die;
+
     }
 
     /**
@@ -19,8 +22,15 @@ class IndexController extends Controller {
      */
     public function index()
     {
-        var_dump('1111');die;
-        return view('Index page');
+        $bestComicses = Comics::orderBy('likes', 'DESC')->take(3)->get();
+        $lastAddedComicses = Comics::orderBy('created_at', 'DESC')->take(3)->get();
+
+        return view('index.index',
+            [
+                'bestComicses' => $bestComicses,
+                'lastAddedComicses' => $lastAddedComicses,
+            ]
+        );
     }
 
 }
