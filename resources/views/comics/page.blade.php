@@ -16,11 +16,12 @@
             <h2  class="post-heading">{{ $comics->name }}</h2>
             <div class="post-content">{{ $comics->description }}</div>
             <div id="comics_info_panel" class="meta">
-                @include('sections.comics_likes')
                 <div class="comments">Комментарии: <b>{{ count($comments) }}</b></div>
                 <div class="user">Автор: HeavyBoy</div>
-                <div class="likes">Лайки: <b>{{ $comics->likes }}</b></div>
+                <div class="likes">Голоса: <b>{{ $comics->likes }}</b></div>
             </div>
+
+            @include('sections.comics_likes')
 
             <!-- comments list -->
             <div id="comments-wrap">

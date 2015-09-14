@@ -288,6 +288,8 @@ jQuery(document).ready(function($) {
 
     $('.comics-like-button').click(function(e){
         e.preventDefault();
+        $(".like_loader").show();
+        $(this).hide();
         comics_id = $(this).data('comics-id');
         token = $(this).data('token');
 
@@ -300,8 +302,8 @@ jQuery(document).ready(function($) {
             },
             success: function(data){
                 if (data.success) {
-                    $("#comics_info_panel .categories").remove();
-                    $("#comics_info_panel").prepend(data.html);
+                    $(".vote-block").empty();
+                    $(".vote-block").html(data.html);
                     $(".meta .likes b").html(data.likes_count);
                 }
             }

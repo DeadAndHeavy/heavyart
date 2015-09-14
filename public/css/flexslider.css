@@ -64,17 +64,41 @@ html[xmlns] .slides {display: block;}
 	zoom: 1;
 }
 
-.flex-caption {
-	width: 50%; 
-	padding: 2%; 
-	position: absolute; 
-	left: 10px; 
-	bottom: 10px; 
-	background: rgba(0,0,0,.8); 
-	color: #fff; 
-	text-shadow: 0 -1px 0 rgba(0,0,0,.2); 
-	font-size: 14px; 
+.flex-caption,
+.flex-caption-comments,
+.flex-caption-likes {
+	padding: 2%;
+	position: absolute;
+	background: rgba(0,0,0,.8);
+	color: #fff;
+	text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+	font-size: 14px;
 	line-height: 18px;
+}
+.flex-caption {
+    bottom: 10px;
+    width: 50%;
+    left: 10px;
+}
+.flex-caption-comments {
+    opacity: 0.8;
+    bottom: 10px;
+    left: 58%;
+    width: 10%;
+    background: #666 url("../img/comment-icon.png") no-repeat scroll 10px center / 24px auto;
+    text-align: right;
+    font-weight: bold;
+}
+
+.flex-caption-likes {
+    opacity: 0.8;
+    right: 10px;
+    bottom: 10px;
+    left: 74%;
+    width: 10%;
+    background: #666 url("../img/add-to-favorites.png") no-repeat scroll 10px center / 33px auto;
+    text-align: right;
+    font-weight: bold;
 }
 
 /* Direction Nav */

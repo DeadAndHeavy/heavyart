@@ -178,6 +178,10 @@ px      68    160    252    344    436    528    620    712    */
 	}
 	
 	#contact-sidebar{ width: 140px; /* 160 - 20*/ }
+
+    .home-block-heading {
+        line-height: 46px;
+    }
 }
 
 
@@ -191,7 +195,7 @@ cols    1     2      3
 px      68    160    252    */
 
 @media only screen and (max-width: 767px) {
-	
+
 	#nav {
 		display: none;
 	}
@@ -213,6 +217,11 @@ px      68    160    252    */
 		font-size: 21px;
 		margin-left: 0px;
 	}
+
+    .home-block figcaption span,
+    .portfolio-thumbs figcaption span{
+        display: none;
+    }
 	
 	/* slider */
 	
@@ -426,6 +435,11 @@ px      68    160    252    */
 	}
 	
 	#contact-sidebar{ width: 232px; /* 252 - 20*/ }
+
+    .one-third-thumbs figure, .one-fourth-thumbs figure, .portfolio-thumbs figure {
+        margin-left: 17%;
+        width: 69%;
+    }
 	
 }
 
@@ -472,6 +486,11 @@ px      68    160    252    344    436    */
 	.recent-post .post-head {
 		width: 372px;
 	}
+
+    .home-block figcaption span,
+    .portfolio-thumbs figcaption span{
+        display: none;
+    }
 	
 	/* nav */
 	
@@ -496,7 +515,7 @@ px      68    160    252    344    436    */
 	
 	.portfolio-thumbs{ width: 436px; }
 	
-	.portfolio-thumbs figure{ width: 436px; }
+	/*.portfolio-thumbs figure{ width: 436px; }*/
 	
 	/* project */
 	
@@ -523,5 +542,36 @@ px      68    160    252    344    436    */
 	
 	#contact-sidebar{ width: 416px; /* 436 - 20*/ }
 
-	
+}
+
+@media only screen and (max-width: 480px) {
+
+    .home-slider .flex-caption-comments {
+        bottom: -20px;
+        left: 10px;
+        width: 20%;
+    }
+
+    .home-slider .flex-caption-likes {
+        bottom: -20px;
+        left: 80px;
+        width: 20%;
+    }
+
+    .home-block .flex-caption-comments, .portfolio-thumbs .flex-caption-comments {
+        bottom: 0;
+        left: 7%;
+        width: 33%;
+    }
+
+    .home-block .flex-caption-likes, .portfolio-thumbs .flex-caption-likes {
+        bottom: 0;
+        left: 50%;
+        width: 33%;
+    }
+
+    .home-block figcaption span,
+    .portfolio-thumbs figcaption span{
+        display: none;
+    }
 }

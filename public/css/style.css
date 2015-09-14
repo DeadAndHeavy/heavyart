@@ -381,9 +381,20 @@ nav a{
 	transition: all 0.3s ease;
 }
 
-.home-block figure a:hover img{
+.home-block figure a:hover img {
 	opacity: 0.1;
 	line-height: 0em;
+}
+
+.home-block figure p,
+.portfolio-thumbs figure p{
+    transition: all 0.3s ease 0s;
+}
+
+.home-block figure:hover p,
+.portfolio-thumbs figure:hover p{
+    display: none;
+    transition: all 0.3s ease 0s;
 }
 
 
@@ -814,7 +825,7 @@ article .meta div{
 }
 
 article .meta .comments{
-	border-left: 1px solid #cecece;	
+	/*border-left: 1px solid #cecece;*/
 	border-right: 1px solid #cecece;
 	background: url(../img/icon-comments.png) no-repeat;
 }
@@ -828,7 +839,7 @@ article .meta .user{
 }
 
 article .meta .categories{
-	background: url(../img/icon-tags.png) no-repeat;
+    padding: 5px 10px;
 }
 article .meta .categories.liked {
     background: url("../img/like_button.png") no-repeat scroll 5px 12px / 21px auto;
@@ -1050,19 +1061,25 @@ footer .wrapper,
     color: green;
 }
 
+
 a.comics-like-button {
+    background: rgba(0, 0, 0, 0) url("../img/add-to-favorites.png") repeat scroll 0 0 / 80px auto;
     color: #888;
+    display: block;
+    height: 80px;
+    width: 80px;
+    opacity: 0.5
 }
 
 a.comics-like-button:hover {
-    color: #000;
+    opacity: 1;
 }
 
 #sidebar a:hover {
     color: #000;
 }
 
-.comment_loading {
+.comment_loading{
     background-image: url('../img/loading.gif');
     background-size: 100px;
     background-color: #EAEAEA;
@@ -1075,6 +1092,17 @@ a.comics-like-button:hover {
     position: relative;
     margin-top: -254px;
     display: none;
+}
+
+
+.like_loader {
+    background-image: url("../img/loading.gif");
+    background-repeat: no-repeat;
+    background-size: 80px auto;
+    display: none;
+    float: left;
+    height: 80px;
+    width: 80px;
 }
 
 .people-block table {
@@ -1090,6 +1118,29 @@ a.comics-like-button:hover {
     border: 1px solid #444; /* Параметры рамки */
     text-align: center; /* Выравнивание по левому краю */
     vertical-align: middle;
+}
+.vote-block{
+    overflow: hidden;
+    min-height: 45px;
+}
+.vote-block .vote-block-title{
+    float: left;
+    margin: 30px 10px 30px 0;
+}
+.vote-block .vote-block-button{
+    float: left;
+}
+.home-block .flex-caption-comments,
+.portfolio-thumbs .flex-caption-comments{
+    bottom: 0;
+    left: 7%;
+    width: 20%;
+}
+.home-block .flex-caption-likes,
+.portfolio-thumbs .flex-caption-likes{
+    bottom: 0;
+    left: 33%;
+    width: 20%;
 }
 
 

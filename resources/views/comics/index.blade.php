@@ -16,6 +16,8 @@
                     </figcaption>
 
                     <a href="/comics/{{ $comics->id }}"  class="thumb"><img src="content/comics/{{ $comics->id }}_gallery.jpg" alt="{{ $comics->name }}" /></a>
+                    <p class="flex-caption-comments">{{ count($comics->comments) }}</p>
+                    <p class="flex-caption-likes">{{ $comics->likes }}</p>
                 </figure>
             @endforeach
         </div>

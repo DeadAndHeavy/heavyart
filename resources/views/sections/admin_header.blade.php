@@ -1,8 +1,5 @@
 <header class="clearfix">
     <div class="wrapper clearfix">
-        <a href="{{ route('adminPanel') }}" id="logo">
-            <img width="100" src="/img/logo.png" alt="Heavy Art">
-        </a>
 
         <div class="auth-form">
             <div class="user_info">
