@@ -15,10 +15,6 @@
 
     <div class="wrapper clearfix">
 
-        <a href="{{ route('home') }}" id="logo">
-            <img width="100" src="/img/logo.png" alt="Heavy Art">
-        </a>
-
         @if (Auth::check())
             <div class="auth-form">
                 <div class="user_info">

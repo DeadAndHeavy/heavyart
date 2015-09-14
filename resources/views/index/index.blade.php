@@ -48,7 +48,7 @@
                         <figure>
                             <figcaption>
                                 <strong>{{ $comics->name }}</strong>
-                                <span>{{ str_limit($comics->description, $limit = 400, $end = '...') }}</span>
+                                <span>{{ str_limit($comics->description, $limit = 300, $end = '...') }}</span>
                                 <em>{{ date('F d, Y', strtotime($comics->created_at)) }}</em>
                                 <a href="/comics/{{ $comics->id }}" class="opener"></a>
                             </figcaption>

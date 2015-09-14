@@ -41,7 +41,7 @@ body {-webkit-tap-highlight-color: #000;}
 
 /* HEADER ------------------------------------------------------------*/
 
-header{ background: #444 url(../img/header.png) bottom left repeat-x; }
+header{ background: #444 url(../img/header_back.png) scroll center top; }
 
 
 /* WIDGETS------------------------------------------------*/

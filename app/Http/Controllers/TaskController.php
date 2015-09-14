@@ -23,7 +23,7 @@ class TaskController extends Controller {
      */
     public function getIndex()
     {
-        $tasks = Task::orderBy('created_at', 'DESC')->get();
+        $tasks = Task::orderBy('created_at')->get();
 
         return view('task.index',
             [
@@ -44,7 +44,7 @@ class TaskController extends Controller {
                     'status' => 0,
                 ]);
 
-                $tasks = Task::orderBy('created_at', 'DESC')->get();
+                $tasks = Task::orderBy('created_at')->get();
 
                 $returnHTML = view('sections.comics_tasks')->with('tasks', $tasks)->render();
 
