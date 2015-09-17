@@ -147,6 +147,8 @@ return [
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
 
+        'Riari\Forum\ForumServiceProvider',
+
 	],
 
 	/*

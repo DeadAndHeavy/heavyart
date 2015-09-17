@@ -24,6 +24,9 @@
                     <div class="user_class_icon">
                         <img src="/img/classes/{{ Auth::user()->gameClass->id }}.jpg" alt="{{ Auth::user()->gameClass->class_name }}" title="{{ Auth::user()->gameClass->class_name }}">
                     </div>
+                    <div class="user_race_icon">
+                        <img src="/img/races/{{ Auth::user()->gameRace->id }}_{{ Auth::user()->gender }}.jpg" alt="{{ Auth::user()->gameRace->race_name }}" title="{{ Auth::user()->gameRace->race_name }}"/>
+                    </div>
                 </div>
                 <a class="logout_link" href="/auth/logout">Выйти</a>
             </div>
@@ -61,6 +64,7 @@
                 <li class="{{ MainHelper::setActive('/') }}"><a href="{{ route('home') }}">ГЛАВНАЯ</a></li>
                 <li class="{{ MainHelper::setActive('comics') }}"><a href="{{ route('comics') }}">КОМИКСЫ</a></li>
                 <li class="{{ MainHelper::setActive('task') }}"><a href="/task">ЗАКАЗЫ</a></li>
+                <li class="{{ MainHelper::setActive('forum') }}"><a href="/forum">ФОРУМ</a></li>
                 <li class="{{ MainHelper::setActive('people') }}"><a href="/people">СООБЩЕСТВО</a></li>
             </ul>
             <div id="combo-holder"></div>

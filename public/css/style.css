@@ -1015,7 +1015,7 @@ footer .wrapper,
     box-shadow: 0 0 7px 10px #444;
     -moz-box-shadow: 0 0 7px 10px #444;
     -webkit-box-shadow: 0 0 7px 10px #444;
-    padding: 15px;
+    padding: 10px;
 }
 
 .auth-form a.reg_link {
@@ -1047,7 +1047,11 @@ footer .wrapper,
 }
 
 .auth-form .user_class_icon {
+     float: right;
+ }
+.auth-form .user_race_icon {
     float: right;
+    margin-right: 5px;
 }
 
 .auth-form .user_message {

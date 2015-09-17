@@ -15,7 +15,7 @@ body a.reg_link,
 body a.logout_link{ color: #999; }
 
 .highlighted_username{
-    color: #EBE781;
+    color: #6699FF;
 }
 
 .alert-danger {
@@ -26,7 +26,7 @@ body a:hover,
 #top-widget-holder a:hover,
 #nav>li>a:hover,
 .project-heading .launch:hover{
-	color: #EBE781;
+	color: #6699FF;
 }
 
 h1,h2,h3,h4,h5,h6{ color: #444444; }
@@ -65,7 +65,7 @@ nav a{ color: #E2E0D7; }
 
 #nav>li.current-menu-item>a,
 #nav>li.current_page_item>a{
-	color: #EBE781;
+	color: #6699FF;
 }
 
 /* sub navigation -----------------------------------------------------*/
@@ -76,7 +76,7 @@ nav a{ color: #E2E0D7; }
 
 #nav>li ul li a:hover,
 #nav>li ul li:nth-child(even) a:hover{
-	background: #EBE781;
+	background: #6699FF;
 	color: #333;
 }
 
