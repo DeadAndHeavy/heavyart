@@ -310,6 +310,68 @@ jQuery(document).ready(function($) {
         });
     });
 
+    $('.rating-vote-button').click(function(e){
+        $voteBlock = $(this).parent();
+        rating = parseInt($(this).parent().find(".value b").html(), 10)+1;
+
+        if (rating > 0) {
+            $voteBlock.find(".value b").addClass('rating_state_good');
+            rating = '+' + rating;
+        } else if (rating < 0) {
+            $voteBlock.find(".value b").addClass('rating_state_bad');
+        } else {
+            $voteBlock.find(".value b").removeClass('rating_state_good');
+            $voteBlock.find(".value b").removeClass('rating_state_bad');
+        }
+
+        $voteBlock.find(".value b").html(rating);
+
+        $voteBlock.find('.rating-vote-button').remove();
+        $voteBlock.find('.rating-unvote-button').remove();
+        task_id = $voteBlock.data('task-id');
+        token = $voteBlock.data('token');
+
+        $.ajax({
+            url: 'task/vote',
+            type: "post",
+            data: {
+                'task_id': task_id,
+                '_token': token
+            }
+        });
+    });
+
+    $('.rating-unvote-button').click(function(e){
+        $voteBlock = $(this).parent();
+        rating = parseInt($(this).parent().find(".value b").html(), 10)-1;
+
+        if (rating > 0) {
+            $voteBlock.find(".value b").addClass('rating_state_good');
+            rating = '+' + rating;
+        } else if (rating < 0) {
+            $voteBlock.find(".value b").addClass('rating_state_bad');
+        } else {
+            $voteBlock.find(".value b").removeClass('rating_state_good');
+            $voteBlock.find(".value b").removeClass('rating_state_bad');
+        }
+
+        $voteBlock.find(".value b").html(rating);
+
+        $voteBlock.find('.rating-vote-button').remove();
+        $voteBlock.find('.rating-unvote-button').remove();
+        task_id = $voteBlock.data('task-id');
+        token = $voteBlock.data('token');
+
+        $.ajax({
+            url: 'task/unvote',
+            type: "post",
+            data: {
+                'task_id': task_id,
+                '_token': token
+            }
+        });
+    });
+
     $('.send-task-btn').click(function(e){
         e.preventDefault();
         task_area = $("#task_area");

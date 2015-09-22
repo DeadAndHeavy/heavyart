@@ -1146,6 +1146,42 @@ a.comics-like-button:hover {
     left: 33%;
     width: 20%;
 }
+.task-rating {
+    float: right;
+}
+.task-rating .rating-vote-button {
+    background: url("../img/plus-and-minus.png") no-repeat scroll 0 0 / 70px auto;
+    display: block;
+    height: 26px;
+    width: 26px;
+    float: left;
+    margin-right: 10px;
+}
+.task-rating .rating-unvote-button {
+    background: url("../img/plus-and-minus.png") no-repeat scroll -44px 0 / 70px auto;
+    display: block;
+    height: 26px;
+    width: 26px;
+    float: left;
+}
+.task-rating .value {
+    float: left;
+    margin-right: 20px;
+    margin-top: 4px;
+}
+.task-rating .value b {
+    font-size: 14px;
+    font-weight: bold;
+}
+#tasks-wrap .comment-meta {
+    width: 40%;
+}
+.rating_state_good {
+    color: green;
+}
+.rating_state_bad {
+    color: red;
+}
 
 
 
