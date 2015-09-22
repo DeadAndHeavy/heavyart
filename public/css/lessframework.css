@@ -541,6 +541,9 @@ px      68    160    252    344    436    */
 	#contactForm{ width: 436px; }
 	
 	#contact-sidebar{ width: 416px; /* 436 - 20*/ }
+    #tasks-wrap .comment-meta {
+        width: 60%;
+    }
 
 }
 
@@ -573,5 +576,16 @@ px      68    160    252    344    436    */
     .home-block figcaption span,
     .portfolio-thumbs figcaption span{
         display: none;
+    }
+    .task-comment-block {
+        margin-left: 0;
+    }
+    .taskCommentButton {
+        float: left !important;
+        margin: 15px 0 0 !important;
+    }
+    #tasks-wrap .comment-meta {
+        margin: 25px 0 15px;
+        width: 65%;
     }
 }

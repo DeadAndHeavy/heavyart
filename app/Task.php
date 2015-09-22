@@ -23,4 +23,9 @@ class Task extends Model {
         return $this->belongsTo('App\User');
     }
 
+    public function taskComments()
+    {
+        return $this->hasMany('App\TaskComment', 'task_id');
+    }
+
 }

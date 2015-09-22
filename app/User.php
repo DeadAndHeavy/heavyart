@@ -61,4 +61,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->hasMany('App\TaskVote', 'user_id');
     }
 
+    public function taskComments()
+    {
+        return $this->hasMany('App\TaskComment', 'user_id');
+    }
+
 }

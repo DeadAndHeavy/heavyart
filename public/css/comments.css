@@ -219,6 +219,7 @@
 #taskForm,
 #authForm,
 #regForm,
+.taskCommentForm,
 #addComicsForm,
 #contactForm{
 	margin-bottom: 18px;
@@ -230,6 +231,7 @@
 #taskForm h4,
 #authForm h4,
 #regForm h4,
+.taskCommentForm h4,
 #addComicsForm h4,
 #contactForm h4{
 	margin-top: 20px;
@@ -243,6 +245,9 @@
 #regForm input,
 #regForm textarea,
 #regForm select,
+.taskCommentForm input,
+.taskCommentForm textarea,
+.taskCommentForm select,
 #addComicsForm input,
 #addComicsForm textarea,
 #addComicsForm select,
@@ -265,6 +270,9 @@
 #regForm input:focus,
 #regForm textarea:focus,
 #regForm select:focus,
+.taskCommentForm input:focus,
+.taskCommentForm textarea:focus,
+.taskCommentForm select:focus,
 #addComicsForm input:focus,
 #addComicsForm textarea:focus,
 #addComicsForm select:focus,
@@ -290,6 +298,7 @@
 #contactForm input[type="text"],
 #authForm input[type="text"],
 #regForm input[type="text"],
+.taskCommentForm input[type="text"],
 #addComicsForm input[type="text"],
 #commentform input[type="text"]{
 	overflow: auto;
@@ -306,6 +315,11 @@
 	height: 230px;
 }
 
+.taskCommentForm textarea {
+    width: 90%;
+    height: 70px;
+}
+
 
 #contactForm input[type="submit"],
 #commentform input[type="submit"],
@@ -314,8 +328,11 @@
 #authForm input[type="button"],
 #regForm input[type="submit"],
 #regForm input[type="button"],
+.taskCommentForm input[type="submit"],
+.taskCommentForm input[type="button"],
 #addComicsForm input[type="submit"],
 #addComicsForm input[type="button"],
+.taskCommentButton,
 #contactForm input[type="button"]{
 	margin: 21px 0px;
 	width: auto;
@@ -345,6 +362,9 @@
 #authForm input[type="button"]:hover,
 #regForm input[type="submit"]:hover,
 #regForm input[type="button"]:hover,
+.taskCommentButton:hover,
+.taskCommentForm input[type="submit"]:hover,
+.taskCommentForm input[type="button"]:hover,
 #addComicsForm input[type="submit"]:hover,
 #addComicsForm input[type="button"]:hover,
 #contactForm input[type="button"]:hover{
@@ -360,6 +380,7 @@
 
 #authForm label,
 #regForm label,
+.taskCommentForm label,
 #addComicsForm label{
     padding-left: 7px;
     color: #999;
@@ -420,4 +441,18 @@
 
 .auth_submit_container {
     margin-bottom: 0;
+}
+
+.comment-status {
+    float: left;
+}
+.taskCommentButton {
+    float: right;
+    margin: 0;
+}
+.taskCommentButton:hover {
+    color: #fff;
+}
+.task-row {
+    border-bottom: 3px #ccc solid;
 }

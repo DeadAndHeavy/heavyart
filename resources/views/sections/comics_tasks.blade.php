@@ -2,7 +2,7 @@
 @if (count($tasks) > 0)
     <ol class="commentlist">
         @foreach($tasks as $task)
-        <li class="comment odd thread-even depth-1">
+        <li class="comment task-row odd thread-even depth-1">
             <div class="comment-body clearfix">
                 <img alt='' src='/img/races/{{ $task->user->game_race_id }}_{{ $task->user->gender }}.jpg' class='avatar avatar-35 photo' height='36' width='36' />
                 <img alt='' src='/img/classes/{{ $task->user->game_class_id }}.jpg' class='avatar avatar-35 photo' height='36' width='36' />
@@ -36,7 +36,30 @@
                         Статус заказа: <b style="color:red">НЕ ВЫПОЛНЕН</b>
                     @endif
                 </div>
+                <a href="javascript:void(0)" class="taskCommentButton">Комментарии ({{ $task->taskComments->count() }})</a>
             </div>
+            <div class="task-comment-block">
+                <div class="comments-wrap">
+                    @include('sections.comics_task_comments')
+                </div>
+                @if (Auth::check())
+                    <form method="post" class="taskCommentForm">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <input type="hidden" name="task_id" value="{{ $task->id }}">
+
+                        <h4 class="heading">Здесь можно оставить комментарий по заказу</h4>
+
+                        <textarea name="comment_text" class="task_comment_area" maxlength="255"></textarea>
+                        <div class="task_comment_loading"></div>
+
+                        <p><input class="send-task-comment-btn" name="submit" type="submit" id="submit" tabindex="5" value="Отправить" /></p>
+                    </form>
+                    <div class="clearfix"></div>
+                @else
+                    Только авторизованные пользователи могут оставлять комментарии
+                @endif
+            </div>
+            <hr/>
         </li>
         @endforeach
     </ol>

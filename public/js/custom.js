@@ -402,8 +402,45 @@ jQuery(document).ready(function($) {
         });
     });
 
+    $('.send-task-comment-btn').click(function(e){
+        e.preventDefault();
+        main_block = $(this).parents(".task-comment-block");
+        comment_area = main_block.find(".task_comment_area");
+        if (comment_area.hasClass('error')) {
+            comment_area.removeClass('error');
+        }
+
+        if (comment_area.val() == '') {
+            comment_area.addClass('error');
+            return false;
+        }
+        comment_area.prop("disabled", true);
+        main_block.find(".task_comment_loading").show();
+        $.ajax({
+            url: 'task/comment',
+            type: "post",
+            data: {
+                'comment_text': comment_area.val(),
+                '_token': main_block.find('input[name=_token]').val(),
+                'task_id': main_block.find('input[name=task_id]').val()
+            },
+            success: function(data){
+                if (data.success) {
+                    main_block.find(".comments-wrap").html(data.html);
+                    comment_area.val('').prop("disabled", false);
+                    main_block.find(".task_comment_loading").hide();
+                    //$(".meta .comments b").html(data.comments_count);
+                }
+            }
+        });
+    });
+
     $(".alert .close").click(function(){
         $(this).parent().remove();
+    });
+
+    $(".taskCommentButton").on("click", function(){
+        $(this).parents(".comment").find(".task-comment-block").toggle();
     });
 
 

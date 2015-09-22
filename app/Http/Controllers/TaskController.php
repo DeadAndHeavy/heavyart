@@ -1,7 +1,9 @@
 <?php namespace App\Http\Controllers;
 
+use App\Http\Requests\addCommentRequest;
 use App\Http\Requests\addTaskRequest;
 use App\Task;
+use App\TaskComment;
 use App\User;
 use App\TaskVote;
 use Illuminate\Support\Facades\Auth;
@@ -100,6 +102,29 @@ class TaskController extends Controller {
                 ]);
 
                 return response()->json(array('success' => true));
+            }
+        }
+    }
+
+    public function postComment(addCommentRequest $request)
+    {
+        if($request->ajax()) {
+            if ($user = Auth::user()) {
+                $userId = $user->id;
+
+                TaskComment::create([
+                    'user_id' => $userId,
+                    'task_id' => $request['task_id'],
+                    'comment_text' => $request['comment_text'],
+                ]);
+
+                $currentTask = Task::findOrFail($request['task_id']);
+                $taskComments = $currentTask->taskComments()->orderBy('created_at')->get();
+                $taskCommentsCount = count($taskComments);
+
+                $returnHTML = view('sections.comics_comments')->with('comments', $taskComments)->render();
+
+                return response()->json(array('success' => true, 'html' => $returnHTML, 'comments_count' => $taskCommentsCount));
             }
         }
     }
