@@ -550,26 +550,22 @@ px      68    160    252    344    436    */
 @media only screen and (max-width: 480px) {
 
     .home-slider .flex-caption-comments {
-        bottom: -20px;
-        left: 10px;
-        width: 20%;
+        right: 24%;
+        width: 18%;
     }
 
     .home-slider .flex-caption-likes {
-        bottom: -20px;
-        left: 80px;
         width: 20%;
     }
 
     .home-block .flex-caption-comments, .portfolio-thumbs .flex-caption-comments {
         bottom: 0;
-        left: 7%;
+        right: 37%;
         width: 33%;
     }
 
     .home-block .flex-caption-likes, .portfolio-thumbs .flex-caption-likes {
         bottom: 0;
-        left: 50%;
         width: 33%;
     }
 
@@ -587,5 +583,9 @@ px      68    160    252    344    436    */
     #tasks-wrap .comment-meta {
         margin: 25px 0 15px;
         width: 65%;
+    }
+
+    .flex-direction-nav {
+        top: 20%;
     }
 }

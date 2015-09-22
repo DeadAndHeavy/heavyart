@@ -122,7 +122,7 @@ class TaskController extends Controller {
                 $taskComments = $currentTask->taskComments()->orderBy('created_at')->get();
                 $taskCommentsCount = count($taskComments);
 
-                $returnHTML = view('sections.comics_comments')->with('comments', $taskComments)->render();
+                $returnHTML = view('sections.comics_task_comments')->with('task', $currentTask)->render();
 
                 return response()->json(array('success' => true, 'html' => $returnHTML, 'comments_count' => $taskCommentsCount));
             }

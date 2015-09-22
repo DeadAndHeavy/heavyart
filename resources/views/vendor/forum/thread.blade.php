@@ -36,12 +36,6 @@
 
 @if ($thread->canReply)
     <div class="row">
-        <div class="col-xs-4">
-            <div class="btn-group" role="group">
-                <a href="{{ $thread->replyRoute }}" class="btn btn-default">{{ trans('forum::base.new_reply') }}</a>
-                <a href="#quick-reply" class="btn btn-default">{{ trans('forum::base.quick_reply') }}</a>
-            </div>
-        </div>
         <div class="col-xs-8 text-right">
             {!! $thread->pageLinks !!}
         </div>
@@ -52,8 +46,8 @@
     <tbody>
         <colgroup>
            <col span="1" style="width: 20%;">
-           <col span="1" style="width: 55%;">
-           <col span="1" style="width: 25%;">
+           <col span="1" style="width: 60%;">
+           <col span="1" style="width: 20%;">
         </colgroup>
         @foreach ($thread->postsPaginated as $post)
             @include('forum::partials.post', compact('post'))

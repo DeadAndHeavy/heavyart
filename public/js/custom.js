@@ -443,6 +443,12 @@ jQuery(document).ready(function($) {
         $(this).parents(".comment").find(".task-comment-block").toggle();
     });
 
+    $(".forum_answer").click(function(){
+        parent = $(this).parents(".forum-post-row");
+        name = parent.find(".author_info strong").text();
+        $("#quick-reply").find("textarea").text(name + ', ').focus();
+    });
+
 
 //close
 });

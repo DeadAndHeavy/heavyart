@@ -1151,13 +1151,12 @@ a.comics-like-button:hover {
 .home-block .flex-caption-comments,
 .portfolio-thumbs .flex-caption-comments{
     bottom: 0;
-    left: 7%;
+    right: 24%;
     width: 20%;
 }
 .home-block .flex-caption-likes,
 .portfolio-thumbs .flex-caption-likes{
     bottom: 0;
-    left: 33%;
     width: 20%;
 }
 .task-rating {

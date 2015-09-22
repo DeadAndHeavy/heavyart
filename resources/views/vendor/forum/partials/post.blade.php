@@ -1,4 +1,4 @@
-<tr id="post-{{ $post->id }}">
+<tr class="forum-post-row" id="post-{{ $post->id }}">
 	<td class="author_info">
 		<strong>{!! $post->authorName !!}</strong>
 		<div class="author_icons">
@@ -16,6 +16,9 @@
         @endif
         @if ($post->canDelete)
             <a href="{{ $post->deleteRoute }}" data-confirm data-method="delete">{{ trans('forum::base.delete') }}</a>
+        @endif
+        @if (Auth::check() && $post->author_id !== Auth::user()->id)
+            <a href="javascript:void(0)" class="forum_answer">Ответить</a>
         @endif
         <div class="text-muted">
             {{ trans('forum::base.posted_at') }} {{ $post->posted }}

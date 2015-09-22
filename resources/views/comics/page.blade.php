@@ -13,7 +13,7 @@
             <h2  class="post-heading">{{ $comics->name }}</h2>
             <div class="post-content">{{ $comics->description }}</div>
             <div class="feature-image">
-                <a href="/content/comics/{{ $comics->id }}_original.jpg" data-rel="prettyPhoto"><img src="/content/comics/{{ $comics->id }}_slider.jpg" alt="{{ $comics->name }}" /></a>
+                <a href="/content/comics/{{ $comics->id }}_original.jpg" data-rel="prettyPhoto" title="{{ $comics->description }}"><img src="/content/comics/{{ $comics->id }}_slider.jpg" alt="{{ $comics->name }}" /></a>
             </div>
             <div id="comics_info_panel" class="meta">
                 <div class="comments">Комментарии: <b>{{ count($comments) }}</b></div>

@@ -430,7 +430,8 @@
 
 #authForm input.error,
 #commentform textarea.error,
-#taskForm textarea.error{
+#taskForm textarea.error,
+.taskCommentForm textarea.error{
     background-color: #FFD5D6;
 }
 
