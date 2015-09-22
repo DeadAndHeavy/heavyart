@@ -36,7 +36,7 @@
                         Статус заказа: <b style="color:red">НЕ ВЫПОЛНЕН</b>
                     @endif
                 </div>
-                <a href="javascript:void(0)" class="taskCommentButton">Комментарии ({{ $task->taskComments->count() }})</a>
+                <a href="javascript:void(0)" class="taskCommentButton">Комментарии (<b>{{ $task->taskComments->count() }}</b>)</a>
             </div>
             <div class="task-comment-block">
                 <div class="comments-wrap">

@@ -429,7 +429,7 @@ jQuery(document).ready(function($) {
                     main_block.find(".comments-wrap").html(data.html);
                     comment_area.val('').prop("disabled", false);
                     main_block.find(".task_comment_loading").hide();
-                    //$(".meta .comments b").html(data.comments_count);
+                    main_block.parents(".task-row").find(".taskCommentButton b").html(data.comments_count);
                 }
             }
         });
