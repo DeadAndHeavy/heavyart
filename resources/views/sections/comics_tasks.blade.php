@@ -56,10 +56,9 @@
                     </form>
                     <div class="clearfix"></div>
                 @else
-                    Только авторизованные пользователи могут оставлять комментарии
+                    <div style="margin-bottom: 20px;">Только авторизованные пользователи могут оставлять комментарии</div>
                 @endif
             </div>
-            <hr/>
         </li>
         @endforeach
     </ol>

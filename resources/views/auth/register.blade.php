@@ -31,7 +31,9 @@
         <select name="game_class">
             <option value="" selected disabled>Укажите класс</option>
             @foreach ($game_classes as $class)
-                <option value="{{ $class->id }}">{{ $class->class_name }}</option>
+                @if (!in_array($class->id, [12,13]))
+                    <option value="{{ $class->id }}">{{ $class->class_name }}</option>
+                @endif
             @endforeach
         </select><br/><br/>
 
@@ -39,7 +41,9 @@
         <select id="faction_selector" name="faction">
             <option value="" selected disabled>Укажите фракцию</option>
             @foreach ($game_factions as $faction)
-                <option value="{{ $faction->id }}">{{ $faction->faction_name }}</option>
+                @if ($faction->id != 3)
+                    <option value="{{ $faction->id }}">{{ $faction->faction_name }}</option>
+                @endif
             @endforeach
         </select><br/><br/>
 

@@ -250,6 +250,7 @@ jQuery(document).ready(function($) {
         $(race_container + " option[data-faction-id!=" + faction_id + "]").hide();
         $(race_container + " option[data-faction-id=" + faction_id + "]").show();
         $(race_container + " option[data-faction-id=0]").show();
+        $(race_container + " option[data-faction-id=3]").hide();
     });
 
     $("#comment_area").val('');

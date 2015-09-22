@@ -24,10 +24,10 @@
                                         {{ $user->username }}
                                     </td>
                                     <td>
-                                        <img alt='' src='/img/races/{{ $user->game_race_id }}_{{ $user->gender }}.jpg' class='avatar avatar-35 photo' height='36' width='36' />
+                                        <img alt='' src='/img/races/{{ $user->game_race_id }}_{{ $user->gender }}.jpg' title="{{ $user->gameRace->race_name }}" class='avatar avatar-35 photo' height='36' width='36' />
                                     </td>
                                     <td>
-                                        <img alt='' src='/img/classes/{{ $user->game_class_id }}.jpg' class='avatar avatar-35 photo' height='36' width='36' />
+                                        <img alt='' src='/img/classes/{{ $user->game_class_id }}.jpg' title="{{ $user->gameClass->class_name }}" class='avatar avatar-35 photo' height='36' width='36' />
                                     </td>
                                     <td>
                                         {{ $user->gameFaction->faction_name }}
