@@ -311,7 +311,7 @@ jQuery(document).ready(function($) {
         });
     });
 
-    $('.rating-vote-button').click(function(e){
+    $(document).on('click', '.rating-vote-button', function() {
         $voteBlock = $(this).parent();
         rating = parseInt($(this).parent().find(".value b").html(), 10)+1;
 
@@ -342,7 +342,7 @@ jQuery(document).ready(function($) {
         });
     });
 
-    $('.rating-unvote-button').click(function(e){
+    $(document).on('click', '.rating-unvote-button', function() {
         $voteBlock = $(this).parent();
         rating = parseInt($(this).parent().find(".value b").html(), 10)-1;
 
@@ -403,7 +403,7 @@ jQuery(document).ready(function($) {
         });
     });
 
-    $('.send-task-comment-btn').click(function(e){
+    $(document).on('click', '.send-task-comment-btn', function(e) {
         e.preventDefault();
         main_block = $(this).parents(".task-comment-block");
         comment_area = main_block.find(".task_comment_area");
@@ -440,7 +440,7 @@ jQuery(document).ready(function($) {
         $(this).parent().remove();
     });
 
-    $(".taskCommentButton").on("click", function(){
+    $(document).on('click', '.taskCommentButton', function() {
         $(this).parents(".comment").find(".task-comment-block").toggle();
     });
 

@@ -60,8 +60,9 @@ class TaskController extends Controller {
                 ]);
 
                 $tasks = Task::orderBy('created_at')->get();
+                $userVotes = $user->taskVotes->lists('task_id');
 
-                $returnHTML = view('sections.comics_tasks')->with('tasks', $tasks)->render();
+                $returnHTML = view('sections.comics_tasks')->with('tasks', $tasks)->with('userVotes', $userVotes)->render();
 
                 return response()->json(array('success' => true, 'html' => $returnHTML));
             }

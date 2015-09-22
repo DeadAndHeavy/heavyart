@@ -2,6 +2,7 @@
 
 use App\Comics;
 use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class PeopleController extends Controller {
 
